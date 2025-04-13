@@ -40,3 +40,35 @@ sequenceDiagram
 | 直線、矢印       | 同期処理で利用  |
 | 点線、点線矢印   | レスポンスで利用|
 | オープン矢印・点線オープン矢印 | 非同期処理で使われる |
+
+## 活性・非活性
+
+```mermaid
+sequenceDiagram
+    App ->> +API: GET /user_name
+    API -->> -App: response
+```
+
+- `+``-` を入れることで一つの処理がどこまであるのかがわかる
+
+## 例： APIのリクエスト・レンスポンス
+
+```mermaid
+sequenceDiagram
+ participant front
+ participant server
+ front ->> +server: GET /user_id
+ server ->> +DB: user_id取得
+ DB -->> -server: user情報
+ server -->> -front: レスポンス
+```
+
+## 条件分岐とループ
+
+## 並列処理
+
+## 例
+
+### OAuth2の認証フロー
+
+### 非同期処理（メッセージキュー）
